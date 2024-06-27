@@ -59,6 +59,35 @@ public class Traslado2 extends javax.swing.JFrame {
         this.setSize(780, 580);
         this.formT = formTr;
         btnDisponibilidad.setEnabled(false);
+// Validaciones de los campos obligatorios
+        if (txtPrestamo.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El campo 'Motivo de Préstamo' es obligatorio.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (txtDestino.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El campo 'Destino' es obligatorio.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (boxVehiculo.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar un 'Vehículo'.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (cbxCarroceria.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado de 'Carrocería'.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (cbxCombustible.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar el nivel de 'Combustible'.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (cbxLlantas.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado de las 'Llantas'.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (cbxVehiculo.getSelectedIndex() == -1) {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado del 'Vehículo'.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
     }
 
@@ -213,36 +242,7 @@ public class Traslado2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDisponibilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDisponibilidadActionPerformed
-        // Validaciones de los campos obligatorios
-        if (txtPrestamo.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "El campo 'Motivo de Préstamo' es obligatorio.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (txtDestino.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "El campo 'Destino' es obligatorio.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (boxVehiculo.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar un 'Vehículo'.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (cbxCarroceria.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado de 'Carrocería'.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (cbxCombustible.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar el nivel de 'Combustible'.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (cbxLlantas.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado de las 'Llantas'.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (cbxVehiculo.getSelectedIndex() == -1) {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar el estado del 'Vehículo'.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
+        
         // Crear el mensaje de confirmación
         StringBuilder mensaje = new StringBuilder();
         mensaje.append("Motivo de Préstamo: ").append(txtPrestamo.getText()).append("\n");
