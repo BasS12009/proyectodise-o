@@ -1,0 +1,12 @@
+excepciones\DAOException.class
+interfaces\IConexion.class
+Entidades\Traslado.class
+Conexion\ConexionBD.class
+interfaces\IVehiculoDAO.class
+pruebas\Prueba.class
+com\mycompany\traslado_persistencia\Traslado_Persistencia.class
+DAOs\TrasladoDAO.class
+DAOs\VehiculoDAO.class
+interfaces\ITrasladoDAO.class
+Entidades\Traslado2.class
+Entidades\Vehiculo.class

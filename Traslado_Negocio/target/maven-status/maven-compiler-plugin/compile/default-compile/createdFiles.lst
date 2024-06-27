@@ -1,0 +1,8 @@
+interfaces\ITrasladoBO.class
+Excepciones\BOException.class
+Converters\TrasladoCVR.class
+interfaces\IVehiculoBO.class
+Converters\VehiculoCVR.class
+BO\VehiculoBO.class
+BO\TrasladoBO.class
+com\mycompany\traslado_negocio\Traslado_Negocio.class
