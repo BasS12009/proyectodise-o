@@ -4,6 +4,11 @@
  */
 package GUI;
 
+import BO.TrasladoBO;
+import BO.VehiculoBO;
+import DTOs.TrasladoDTO;
+import DTOs.VehiculoDTO;
+import Excepciones.BOException;
 import dtos.EmpleadoDTO;
 import excepciones.FachadaException;
 import excepciones.NegocioException;
@@ -11,6 +16,7 @@ import fachada.VehiculoFCD;
 import interfaces.IEmpleadoBO;
 import interfaz.IVehiculoFCD;
 import java.awt.Color;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -28,6 +34,8 @@ public class Traslado2 extends javax.swing.JFrame {
     //instancia de mi form traslado
     Traslado formT;
     private IVehiculoFCD vehiculo;
+    private TrasladoBO fachada;
+    
     
     /**
      * Creates new form Traslado2
@@ -37,7 +45,8 @@ public class Traslado2 extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
         this.setSize(780, 580);
         this.vehiculo = new VehiculoFCD();
-        
+        try{
+       
         // Inicializar JLabel
         lblEmpleadoDatos = new JLabel();
         lblEmpleadoDatos.setForeground(Color.WHITE);
@@ -45,7 +54,6 @@ public class Traslado2 extends javax.swing.JFrame {
         lblEmpleadoDatos.setVisible(false);
         btnDisponibilidad.enable(false);
 
-        try{
         vehiculo.llenarCBX(boxVehiculo);
         }
         catch(Exception ex){
@@ -155,7 +163,6 @@ public class Traslado2 extends javax.swing.JFrame {
         jLabel3.setText("Vehiculo:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
 
-        boxVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AutoBus 20 personas" }));
         boxVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxVehiculoActionPerformed(evt);
@@ -264,16 +271,21 @@ public class Traslado2 extends javax.swing.JFrame {
                 "Solicitar");
 
         if (opcion == JOptionPane.YES_OPTION) {
-            // Aquí puedes agregar el código para manejar la solicitud del traslado
-            // fachada.agregar(nuevoTraslado);
-            // Generar PDF
-            //TrasladoPDFController controller = new TrasladoPDFController();
-            // String pdfFileName = "TicketTrasladoAlumnos.pdf";
-            // controller.generarPDF(mensaje.toString(), pdfFileName);
-            // Mostrar mensaje de éxito
-            // JOptionPane.showMessageDialog(this, "Traslado agregado con éxito y PDF generado.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-            // Abrir el PDF generado
-            // abrirPDF(pdfFileName);
+            try {
+                // Aquí puedes agregar el código para manejar la solicitud del traslado
+               
+                fachada.agregar(new TrasladoDTO());
+                // Generar PDF
+                //TrasladoPDFController controller = new TrasladoPDFController();
+                // String pdfFileName = "TicketTrasladoAlumnos.pdf";
+                // controller.generarPDF(mensaje.toString(), pdfFileName);
+                // Mostrar mensaje de éxito
+                // JOptionPane.showMessageDialog(this, "Traslado agregado con éxito y PDF generado.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                // Abrir el PDF generado
+                // abrirPDF(pdfFileName);
+            } catch (BOException ex) {
+                Logger.getLogger(Traslado2.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             // El usuario seleccionó "Cancelar" o cerró el diálogo
             JOptionPane.showMessageDialog(this, "Operación cancelada.", "Cancelado", JOptionPane.INFORMATION_MESSAGE);

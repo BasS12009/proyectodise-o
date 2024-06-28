@@ -40,16 +40,16 @@ public class Traslado extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         dateRegreso = new com.toedter.calendar.JDateChooser();
         jLabel6 = new javax.swing.JLabel();
-        txtHoraRegreso = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         dateSalida = new com.toedter.calendar.JDateChooser();
-        txtHoraSalida = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         btnDisponibilidad = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
+        cbxHoraSalida = new javax.swing.JComboBox<>();
+        cbxHoraRegreso = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,13 +66,6 @@ public class Traslado extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Hora:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, -1, -1));
-
-        txtHoraRegreso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHoraRegresoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtHoraRegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 100, 30));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,7 +85,6 @@ public class Traslado extends javax.swing.JFrame {
         jLabel9.setText("Fecha de Salida:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
         jPanel1.add(dateSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 150, 30));
-        jPanel1.add(txtHoraSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 100, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,6 +109,12 @@ public class Traslado extends javax.swing.JFrame {
         });
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 130, -1));
 
+        cbxHoraSalida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 a.m.", "8:30 a.m.", "9:00 a.m.", "9:30 a.m", "10:00 a.m.", "10:30 a.m.", "11:00 a.m.", "11:30 a.m", "12:00 a.m.", "12:30 a.m.", "1:00 p.m", " " }));
+        jPanel1.add(cbxHoraSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 150, 30));
+
+        cbxHoraRegreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 a.m.", "10:00 a.m.", "11:00 a.m.", "12:00 a.m.", "1:00 p.m", "2:00 p.m", "3:00 p.m", "4:00 p.m" }));
+        jPanel1.add(cbxHoraRegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 160, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,10 +128,6 @@ public class Traslado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtHoraRegresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraRegresoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHoraRegresoActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
@@ -205,6 +199,8 @@ try {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisponibilidad;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JComboBox<String> cbxHoraRegreso;
+    private javax.swing.JComboBox<String> cbxHoraSalida;
     private com.toedter.calendar.JDateChooser dateRegreso;
     private com.toedter.calendar.JDateChooser dateSalida;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -215,7 +211,5 @@ try {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtHoraRegreso;
-    private javax.swing.JTextField txtHoraSalida;
     // End of variables declaration//GEN-END:variables
 }

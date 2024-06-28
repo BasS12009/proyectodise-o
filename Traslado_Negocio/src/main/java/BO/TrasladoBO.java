@@ -20,7 +20,7 @@ public class TrasladoBO implements ITrasladoBO{
     // Data Access Object para manejar operaciones de base de datos relacionadas con 'Traslado'
     private final TrasladoDAO trasladoDAO;
     
-    // Conversor para convertir objetos DTO a objetos de dominio y viceversa
+    
     private final TrasladoCVR trasladoCVR;
     
     //Constructor

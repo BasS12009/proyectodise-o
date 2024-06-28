@@ -89,7 +89,11 @@ public class VehiculoDTO {
     public void setCapacidad(String capacidad) {
         this.capacidad = capacidad;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Vehiculo " + numVehiculo + ", capacidad=" + capacidad ;
+    }
     
     
 }
