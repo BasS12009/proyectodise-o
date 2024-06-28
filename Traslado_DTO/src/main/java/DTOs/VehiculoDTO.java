@@ -92,7 +92,7 @@ public class VehiculoDTO {
 
     @Override
     public String toString() {
-        return "Vehiculo " + numVehiculo + ", capacidad=" + capacidad ;
+        return "Vehiculo " + numVehiculo ;
     }
     
     
