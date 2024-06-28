@@ -35,11 +35,31 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>vehiculo</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.mycompany</groupId>
+                    <artifactId>PotroP_Persistencia</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.mycompany</groupId>
+                    <artifactId>PotroP_Negocio</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>inserciones</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.mycompany</groupId>
+                    <artifactId>PotroP_Negocio</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.mycompany</groupId>
+                    <artifactId>PotroP_DTO</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -49,6 +69,16 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>Traslado_DTO</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.lgooddatepicker</groupId>
+            <artifactId>LGoodDatePicker</artifactId>
+            <version>11.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>PotroP_Negocio</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

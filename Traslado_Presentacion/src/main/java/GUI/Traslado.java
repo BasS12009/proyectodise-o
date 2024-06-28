@@ -4,7 +4,9 @@
  */
 package GUI;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalTime;
 import javax.swing.JOptionPane;
 
 
@@ -38,18 +40,14 @@ public class Traslado extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        dateRegreso = new com.toedter.calendar.JDateChooser();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        dateSalida = new com.toedter.calendar.JDateChooser();
-        jLabel11 = new javax.swing.JLabel();
         btnDisponibilidad = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
-        cbxHoraSalida = new javax.swing.JComboBox<>();
-        cbxHoraRegreso = new javax.swing.JComboBox<>();
+        dateSalida = new com.github.lgooddatepicker.components.DateTimePicker();
+        dateRegreso = new com.github.lgooddatepicker.components.DateTimePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,14 +56,8 @@ public class Traslado extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Fecha de Regreso:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, -1, -1));
-        jPanel1.add(dateRegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 150, 30));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Hora:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 270, -1, -1));
+        jLabel5.setText("Fecha y hora de Regreso:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,14 +74,8 @@ public class Traslado extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Fecha de Salida:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
-        jPanel1.add(dateSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 150, 30));
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Hora:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+        jLabel9.setText("Fecha y hora de Salida:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
         btnDisponibilidad.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         btnDisponibilidad.setText("Checar Disponibilidad");
@@ -98,7 +84,7 @@ public class Traslado extends javax.swing.JFrame {
                 btnDisponibilidadActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, -1, -1));
+        jPanel1.add(btnDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, -1, -1));
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI Symbol", 0, 18)); // NOI18N
         btnRegresar.setText("Regresar");
@@ -107,13 +93,9 @@ public class Traslado extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 130, -1));
-
-        cbxHoraSalida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 a.m.", "8:30 a.m.", "9:00 a.m.", "9:30 a.m", "10:00 a.m.", "10:30 a.m.", "11:00 a.m.", "11:30 a.m", "12:00 a.m.", "12:30 a.m.", "1:00 p.m", " " }));
-        jPanel1.add(cbxHoraSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 150, 30));
-
-        cbxHoraRegreso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00 a.m.", "10:00 a.m.", "11:00 a.m.", "12:00 a.m.", "1:00 p.m", "2:00 p.m", "3:00 p.m", "4:00 p.m" }));
-        jPanel1.add(cbxHoraRegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 160, 30));
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 130, -1));
+        jPanel1.add(dateSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+        jPanel1.add(dateRegreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,7 +105,7 @@ public class Traslado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
         );
 
         pack();
@@ -143,15 +125,19 @@ try {
     this.cantidadP = Integer.parseInt((String) jComboBox2.getSelectedItem());
 
     if (cantidadP % 5 == 0) {
-        this.inicio = dateSalida.getDate();
-        this.fin = dateRegreso.getDate();
+        this.inicio = Date.valueOf(dateSalida.datePicker.getDate());
+        inicio.setTime(dateSalida.timePicker.getTime().toNanoOfDay()/1000000);
+        
+        this.fin = Date.valueOf(dateRegreso.datePicker.getDate());
+        
+        fin.setTime(dateRegreso.timePicker.getTime().toNanoOfDay()/1000000);
 
         Traslado2 traslado2 = new Traslado2(this);
 
         traslado2.setVisible(true);
         this.dispose();
     } else {
-        // Coloca tu JOptionPane aquí diciendo que no tenemos disponibilidad
+
         JOptionPane.showMessageDialog(this, "La cantidad seleccionada debe ser un múltiplo de 5 para poder continuar.", "Error de Disponibilidad", JOptionPane.ERROR_MESSAGE);
     }
 } catch (NumberFormatException e) {
@@ -199,14 +185,10 @@ try {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDisponibilidad;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JComboBox<String> cbxHoraRegreso;
-    private javax.swing.JComboBox<String> cbxHoraSalida;
-    private com.toedter.calendar.JDateChooser dateRegreso;
-    private com.toedter.calendar.JDateChooser dateSalida;
+    public com.github.lgooddatepicker.components.DateTimePicker dateRegreso;
+    public com.github.lgooddatepicker.components.DateTimePicker dateSalida;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

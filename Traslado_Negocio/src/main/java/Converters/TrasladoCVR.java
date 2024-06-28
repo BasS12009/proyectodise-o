@@ -8,7 +8,7 @@ import DTOs.TrasladoDTO;
 import DTOs.VehiculoDTO;
 import Entidades.Traslado;
 import Entidades.Vehiculo;
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 /**
  *
@@ -21,15 +21,15 @@ public class TrasladoCVR {
         String folio = trasladoDTO.getFolio();
         String motivo = trasladoDTO.getMotivo();
         int personas = trasladoDTO.getPersonas();
-        LocalDateTime fechaHoraSalida = trasladoDTO.getFechaHoraSalida();
-        LocalDateTime fechaHoraRegreso = trasladoDTO.getFechaHoraRegreso();
+        Date fechaHoraSalida = trasladoDTO.getFechaHoraSalida();
+        Date fechaHoraRegreso = trasladoDTO.getFechaHoraRegreso();
         boolean disponibilidad = trasladoDTO.isDisponibilidad();
         String carroceria = trasladoDTO.getCarroceria();
         String llantas = trasladoDTO.getLlantas();
         int combustible = trasladoDTO.getCombustible();
         String estadoVehiculo = trasladoDTO.getEstadoVehiculo();
         Vehiculo vehiculo = null;
-        return new Traslado(folio, motivo, personas, fechaHoraSalida, fechaHoraRegreso, disponibilidad, vehiculo, estadoVehiculo, llantas, carroceria, combustible);
+        return new Traslado(folio, motivo, personas,fechaHoraSalida, fechaHoraRegreso, disponibilidad, vehiculo, estadoVehiculo, llantas, carroceria, combustible);
 
     }
 
@@ -38,8 +38,8 @@ public class TrasladoCVR {
         String folio = traslado.getFolio();
         String motivo = traslado.getMotivo();
         int personas = traslado.getPersonas();
-        LocalDateTime fechaHoraSalida = traslado.getFechaHoraSalida();
-        LocalDateTime fechaHoraRegreso = traslado.getFechaHoraRegreso();
+        Date fechaHoraSalida = traslado.getFechaHoraSalida();
+        Date fechaHoraRegreso = traslado.getFechaHoraRegreso();
         boolean disponibilidad = traslado.isDisponibilidad();
         VehiculoDTO vehiculoDTO = null;
         String carroceria = traslado.getCarroceria();

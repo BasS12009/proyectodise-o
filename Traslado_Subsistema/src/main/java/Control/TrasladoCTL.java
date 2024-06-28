@@ -68,7 +68,7 @@ public class TrasladoCTL {
         throw new fachadaException("La fecha y hora de regreso no pueden ser nulas.");
     }
 
-    if (trasladoDTO.getFechaHoraSalida().isAfter(trasladoDTO.getFechaHoraRegreso())) {
+    if (trasladoDTO.getFechaHoraSalida().after(trasladoDTO.getFechaHoraRegreso())) {
         throw new fachadaException("La fecha y hora de salida debe ser anterior a la fecha y hora de regreso.");
     }
     

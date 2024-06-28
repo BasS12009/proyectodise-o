@@ -36,7 +36,7 @@ public class VehiculoCTL {
         try {
             // Obtener la lista de vehículos a través del controlador
             for (VehiculoDTO vehiculoDTO : vehiculo.listaVehiculos()) {
-                comboBox.addItem(vehiculoDTO.toString());
+                comboBox.addItem(vehiculoDTO.toString()); 
             }
         } catch (BisnessException ex) {
             // Lanzar una PropsException si ocurre un error al obtener los datos de los vehículos

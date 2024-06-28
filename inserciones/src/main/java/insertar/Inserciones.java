@@ -9,7 +9,6 @@ import dtos.PrestamoDTO;
 import dtos.VehiculoDTO;
 import bo.PrestamoBO;
 import bo.VehiculoBO;
-import exceptions.BisnessException;
 import java.time.LocalDate;
 
 /**
@@ -20,7 +19,7 @@ public class Inserciones {
 
 
     
-    public void insertar() throws BisnessException {
+    public void insertar() throws Exception {
   
     //declaramos los vehiculos 
     VehiculoDTO vehiculo1 = new VehiculoDTO(1, "AUDI", "RXZ", 2014, "COMUN", "WAP-2A-312");

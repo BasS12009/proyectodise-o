@@ -4,7 +4,7 @@
  */
 package Entidades;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 
 /**
@@ -17,8 +17,8 @@ public class Traslado2 {
     private String Folio;
     private String motivo;
     private int personas;
-    private LocalDateTime fechaHoraSalida;
-    private LocalDateTime fechaHoraRegreso;
+    private Date fechaHoraSalida;
+    private Date fechaHoraRegreso;
     private boolean disponibilidad;
     private Vehiculo vehiculo;
     private String estadoVehiculo;
@@ -26,7 +26,7 @@ public class Traslado2 {
     private String carroceria;
     private int combustible;
 
-    public Traslado2(String Folio, String motivo, int personas, LocalDateTime fechaHoraSalida, LocalDateTime fechaHoraRegreso, boolean disponibilidad, Vehiculo vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
+    public Traslado2(String Folio, String motivo, int personas, Date fechaHoraSalida, Date fechaHoraRegreso, boolean disponibilidad, Vehiculo vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
         this.Folio = Folio;
         this.motivo = motivo;
         this.personas = personas;
@@ -41,7 +41,7 @@ public class Traslado2 {
     }
 
     
-    public Traslado2(String id, String Folio, String motivo, int personas, LocalDateTime fechaHoraSalida, LocalDateTime fechaHoraRegreso, boolean disponibilidad, Vehiculo vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
+    public Traslado2(String id, String Folio, String motivo, int personas, Date fechaHoraSalida, Date fechaHoraRegreso, boolean disponibilidad, Vehiculo vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
         this.id = id;
         this.Folio = Folio;
         this.motivo = motivo;
@@ -88,19 +88,19 @@ public class Traslado2 {
         this.personas = personas;
     }
 
-    public LocalDateTime getFechaHoraSalida() {
+    public Date getFechaHoraSalida() {
         return fechaHoraSalida;
     }
 
-    public void setFechaHoraSalida(LocalDateTime fechaHoraSalida) {
+    public void setFechaHoraSalida(Date fechaHoraSalida) {
         this.fechaHoraSalida = fechaHoraSalida;
     }
 
-    public LocalDateTime getFechaHoraRegreso() {
+    public Date getFechaHoraRegreso() {
         return fechaHoraRegreso;
     }
 
-    public void setFechaHoraRegreso(LocalDateTime fechaHoraRegreso) {
+    public void setFechaHoraRegreso(Date fechaHoraRegreso) {
         this.fechaHoraRegreso = fechaHoraRegreso;
     }
 

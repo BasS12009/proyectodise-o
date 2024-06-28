@@ -4,7 +4,7 @@
  */
 package DTOs;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 /**
  *
@@ -16,8 +16,8 @@ public class TrasladoDTO {
     private String Folio;
     private String motivo;
     private int personas;
-    private LocalDateTime fechaHoraSalida;
-    private LocalDateTime fechaHoraRegreso;
+    private Date fechaHoraSalida;
+    private Date fechaHoraRegreso;
     private boolean disponibilidad;
     private VehiculoDTO vehiculo;
     private String estadoVehiculo;
@@ -28,7 +28,7 @@ public class TrasladoDTO {
     public TrasladoDTO() {
     }
 
-    public TrasladoDTO(String Folio, String motivo, int personas, LocalDateTime fechaHoraSalida, LocalDateTime fechaHoraRegreso, boolean disponibilidad, VehiculoDTO vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
+    public TrasladoDTO(String Folio, String motivo, int personas, Date fechaHoraSalida, Date fechaHoraRegreso, boolean disponibilidad, VehiculoDTO vehiculo, String estadoVehiculo, String llantas, String carroceria, int combustible) {
         this.Folio = Folio;
         this.motivo = motivo;
         this.personas = personas;
@@ -66,19 +66,19 @@ public class TrasladoDTO {
         this.personas = personas;
     }
 
-    public LocalDateTime getFechaHoraSalida() {
+    public Date getFechaHoraSalida() {
         return fechaHoraSalida;
     }
 
-    public void setFechaHoraSalida(LocalDateTime fechaHoraSalida) {
+    public void setFechaHoraSalida(Date fechaHoraSalida) {
         this.fechaHoraSalida = fechaHoraSalida;
     }
 
-    public LocalDateTime getFechaHoraRegreso() {
+    public Date getFechaHoraRegreso() {
         return fechaHoraRegreso;
     }
 
-    public void setFechaHoraRegreso(LocalDateTime fechaHoraRegreso) {
+    public void setFechaHoraRegreso(Date fechaHoraRegreso) {
         this.fechaHoraRegreso = fechaHoraRegreso;
     }
 
