@@ -17,7 +17,7 @@ public interface ITrasladoo {
      * Solicita un traslado de vehículo.
      *
      * @param trasladoDTO los detalles del traslado solicitados.
-     * @throws NegocioException si hay un problema con la solicitud del traslado.
+     * @throws excepciones.fachadaException
      */
     public void solicitarTraslado(TrasladoDTO trasladoDTO) throws fachadaException;
     

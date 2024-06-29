@@ -16,25 +16,13 @@ import interfaces.ITrasladoBO;
  * @author diana
  */
 public class TrasladoCTL { 
-    
-//     private IEmpleadoCTL empleado = new EmpleadoCTL();
-//     
-////    public TrasladoCTL(EmpleadoCTL empleado) {
-////        this.empleado = empleado;
-////    }
 
-    
-    
     private final ITrasladoBO traslado;
 
     public TrasladoCTL() {
        this.traslado = new TrasladoBO();
     }
-    
-    
-    
-    
-    
+
     public void solicitarTraslado(TrasladoDTO trasladoDTO) throws fachadaException {
       try {
             traslado.agregar(trasladoDTO);

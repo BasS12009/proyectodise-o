@@ -5,8 +5,6 @@
 package GUI;
 
 import BO.TrasladoBO;
-import BO.VehiculoBO;
-import Excepciones.BOException;
 import Fachada.TrasladoFCD;
 import dtos.EmpleadoDTO;
 import DTOs.TrasladoDTO;
@@ -18,17 +16,12 @@ import fachada.VehiculoFCD;
 import interfaces.IEmpleadoBO;
 import interfaz.IVehiculoFCD;
 import java.awt.Color;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import negocio.EmpleadoBO;
+
 
 /**
  *
@@ -121,11 +114,11 @@ public class Traslado2 extends javax.swing.JFrame {
         // Crear una instancia de TrasladoDTO y llenar sus campos
         TrasladoDTO trasladoDTO = new TrasladoDTO();
         trasladoDTO.setMotivo(txtPrestamo.getText().trim());
-        // Suponiendo que existe una fecha de salida y regreso en algún lugar, como un JDateChooser o similar
+        
 //    trasladoDTO.setFechaHoraSalida(/* Obtener fecha de salida del componente correspondiente */);
 //    trasladoDTO.setFechaHoraRegreso(/* Obtener fecha de regreso del componente correspondiente */);
         trasladoDTO.setDisponibilidad(true); // O el valor que corresponda
-        // Suponiendo que VehiculoDTO ya está definido y exista un método para obtenerlo
+      
         VehiculoDTO vehiculoDTO = obtenerVehiculoSeleccionado(); // Definir este método para obtener el VehiculoDTO seleccionado
         trasladoDTO.setVehiculo(vehiculoDTO);
         trasladoDTO.setEstadoVehiculo(cbxVehiculo.getSelectedItem().toString());
@@ -185,7 +178,52 @@ public class Traslado2 extends javax.swing.JFrame {
 
         // Si no se puede obtener el objeto seleccionado, retornar un nuevo VehiculoDTO vacío o manejar según la lógica de tu aplicación
         return new VehiculoDTO();
+        
+      
     }
+//     // Generacion de pdf: // Método para generar el reporte PDF
+//    private void generarReporte(Timestamp desde, Timestamp hasta) {
+//        String dest = "reporteSucursal.pdf";
+//
+//        try {
+//            PdfWriter writer = new PdfWriter(dest);
+//            PdfDocument pdfDoc = new PdfDocument(writer);
+//            Document document = new Document((Map<String, Object>) pdfDoc);
+//
+//            // Agregar título y período del reporte
+//            document.add(new Paragraph("Reporte de traslados de alumnos"));
+//            document.add(new Paragraph("Período desde: " + desde.toString() + " hasta: " + hasta.toString()));
+//
+//            // Crear una tabla para los detalles de traslado
+//            float[] columnWidths = {200, 200, 200};
+//            Table table = new Table(columnWidths);
+//            table.addCell("Folio");
+//            table.addCell("Destino");
+//            table.addCell("Motivo de Préstamo");
+//            table.addCell(jTextField1.getText().trim()); // Agregar folio desde jTextField1
+//            table.addCell(txtDestino.getText().trim()); // Agregar destino desde txtDestino
+//            table.addCell(txtPrestamo.getText().trim()); // Agregar motivo de préstamo desde txtPrestamo
+//
+//            // Agregar detalles del vehículo seleccionado
+//            VehiculoDTO vehiculoDTO = obtenerVehiculoSeleccionado();
+//            table.addCell("Vehículo");
+//            table.addCell(vehiculoDTO.getNombre()); // Asegúrate de tener un método getName o similar en tu VehiculoDTO
+//            table.addCell("Estado del Vehículo");
+//            table.addCell(cbxVehiculo.getSelectedItem().toString());
+//
+//            // Agregar tabla al documento
+//            document.add(table);
+//
+//            document.close();
+//
+//            JOptionPane.showMessageDialog(this, "Reporte generado con éxito!");
+//
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//            JOptionPane.showMessageDialog(this, "Error al generar el reporte: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+//        }
+//    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
