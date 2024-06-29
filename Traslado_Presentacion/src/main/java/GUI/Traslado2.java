@@ -121,12 +121,12 @@ public class Traslado2 extends javax.swing.JFrame {
         // Crear una instancia de TrasladoDTO y llenar sus campos
         TrasladoDTO trasladoDTO = new TrasladoDTO();
         trasladoDTO.setMotivo(txtPrestamo.getText().trim());
-        // Suponiendo que tienes una fecha de salida y regreso en algún lugar, como un JDateChooser o similar
+        // Suponiendo que existe una fecha de salida y regreso en algún lugar, como un JDateChooser o similar
 //    trasladoDTO.setFechaHoraSalida(/* Obtener fecha de salida del componente correspondiente */);
 //    trasladoDTO.setFechaHoraRegreso(/* Obtener fecha de regreso del componente correspondiente */);
         trasladoDTO.setDisponibilidad(true); // O el valor que corresponda
-        // Suponiendo que VehiculoDTO ya está definido y tienes un método para obtenerlo
-        VehiculoDTO vehiculoDTO = obtenerVehiculoSeleccionado(); // Define este método para obtener el VehiculoDTO seleccionado
+        // Suponiendo que VehiculoDTO ya está definido y exista un método para obtenerlo
+        VehiculoDTO vehiculoDTO = obtenerVehiculoSeleccionado(); // Definir este método para obtener el VehiculoDTO seleccionado
         trasladoDTO.setVehiculo(vehiculoDTO);
         trasladoDTO.setEstadoVehiculo(cbxVehiculo.getSelectedItem().toString());
         trasladoDTO.setLlantas(cbxLlantas.getSelectedItem().toString());

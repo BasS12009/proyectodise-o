@@ -8,14 +8,7 @@ import BO.TrasladoBO;
 import DTOs.TrasladoDTO;
 import excepciones.fachadaException;
 import interfaces.ITrasladoBO;
-import javax.mail.PasswordAuthentication;
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+
 
 
 /**
